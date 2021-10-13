@@ -1,0 +1,24 @@
+{
+  "name": "amogus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppowicz/amogus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppowicz/amogus/issues"
+  },
+  "homepage": "https://github.com/ppowicz/amogus#readme",
+  "dependencies": {
+    "parcel": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
