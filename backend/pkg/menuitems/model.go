@@ -7,6 +7,6 @@ type MenuItem struct {
 	ID          uint    `json:"id" gorm:"autoIncrement"`
 	Name        string  `json:"name"`
 	Description string  `json:"description"`
-	ImageURL    string  `json:"imageURL"`
+	ImageURL    string  `json:"image_url"`
 	Price       float32 `json:"price"`
 }

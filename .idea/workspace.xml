@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/cmd/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/db/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/menuitems/menuitems.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" afterDir="false" />
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="menu items controller">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +103,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634656017731</updated>
-      <workItem from="1634656020376" duration="1832000" />
+      <workItem from="1634656020376" duration="2701000" />
     </task>
+    <task id="LOCAL-00001" summary="menu items controller">
+      <created>1634657992062</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634657992062</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +128,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="menu items controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="menu items controller" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
