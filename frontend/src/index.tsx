@@ -1,8 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
+import Header from "./components/Header";
 
 function Application() {
-  return <h1>App</h1>;
+  return (
+    <>
+      <Header />
+      <></>
+    </>
+  );
 }
 
 render(<Application />, document.querySelector(".root"));
