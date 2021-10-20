@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="menu items controller">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="backend: add login support for github and google">
+      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/menuitems.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +66,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\Jakub\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.5457.46\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -70,10 +84,20 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build pizzeria/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <working_directory value="$PROJECT_DIR$/backend" />
-      <kind value="PACKAGE" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <kind value="FILE" />
       <package value="pizzeria/cmd" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/backend/cmd/main.go" />
@@ -91,7 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build pizzeria/cmd" />
+        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +127,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634656017731</updated>
-      <workItem from="1634656020376" duration="2701000" />
+      <workItem from="1634656020376" duration="3521000" />
+      <workItem from="1634745840032" duration="8524000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -112,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634657992062</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add example record to db">
+      <created>1634672431480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634672431480</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,10 +160,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="menu items controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu items controller" />
+    <MESSAGE value="add example record to db" />
+    <MESSAGE value="backend: add login support for github and google" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend: add login support for github and google" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
