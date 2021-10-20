@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"encoding/json"
+	"errors"
 	"github.com/labstack/echo/v4"
 	"github.com/markbates/goth/gothic"
 	"net/http"
@@ -23,6 +24,23 @@ func CheckAuth(next echo.HandlerFunc) echo.HandlerFunc {
 		c.Set("user", u)
 
 		return next(c)
+	}
+}
+
+func RequireRole(role repository.UserRole) func(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			u, ok := GetUserFromContext(c)
+			if !ok {
+				return errors.New("user not stored in context - probably RequireRole was called before CheckAuth")
+			}
+
+			if u.Role < role {
+				return echo.NewHTTPError(http.StatusForbidden, "forbidden")
+			}
+
+			return next(c)
+		}
 	}
 }
 

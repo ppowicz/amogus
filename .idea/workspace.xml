@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="backend: add login support for github and google">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="add /providers route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1634656017731</updated>
       <workItem from="1634656020376" duration="3521000" />
-      <workItem from="1634745840032" duration="8921000" />
+      <workItem from="1634745840032" duration="9399000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -151,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634754646772</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add /providers route">
+      <created>1634755035293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634755035293</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +180,8 @@
     <MESSAGE value="menu items controller" />
     <MESSAGE value="add example record to db" />
     <MESSAGE value="backend: add login support for github and google" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend: add login support for github and google" />
+    <MESSAGE value="add /providers route" />
+    <option name="LAST_COMMIT_MESSAGE" value="add /providers route" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
