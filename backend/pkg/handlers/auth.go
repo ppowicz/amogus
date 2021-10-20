@@ -16,12 +16,20 @@ import (
 )
 
 type AuthHandler struct {
-	users *repository.UsersRepo
-	cfg   *config.Config
+	users     *repository.UsersRepo
+	cfg       *config.Config
+	providers map[string]string
 }
 
 func NewAuthHandler(r *echo.Group, cfg *config.Config, users *repository.UsersRepo) *AuthHandler {
-	h := &AuthHandler{users, cfg}
+	h := &AuthHandler{
+		users: users,
+		cfg:   cfg,
+		providers: map[string]string{
+			"github": "Github",
+			"google": "Google",
+		},
+	}
 
 	store := sessions.NewCookieStore([]byte(cfg.JwtSecret))
 	store.MaxAge(86400 * 30)
@@ -35,13 +43,17 @@ func NewAuthHandler(r *echo.Group, cfg *config.Config, users *repository.UsersRe
 		github.New(cfg.GithubClient, cfg.GithubSecret, cfg.ApiUrl+"/auth/github/callback", "user"),
 		google.New(cfg.GoogleClient, cfg.GoogleSecret, cfg.ApiUrl+"/auth/google/callback"))
 
-	r.GET("/me", h.getCurrentUser, middleware.CheckAuth)
-
+	r.GET("/providers", h.getProviders)
 	r.GET("/login", h.login)
 	r.GET("/:provider/callback", h.callback)
 	r.GET("/:provider/logout", h.logout)
+	r.GET("/me", h.getCurrentUser, middleware.CheckAuth)
 
 	return h
+}
+
+func (h *AuthHandler) getProviders(c echo.Context) error {
+	return c.JSON(200, h.providers)
 }
 
 func (h *AuthHandler) callback(c echo.Context) error {

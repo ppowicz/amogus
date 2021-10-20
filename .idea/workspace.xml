@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="backend: add login support for github and google">
-      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/menuitems.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/menuitems/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +52,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-    <property name="ts.external.directory.path" value="C:\Users\Jakub\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.5457.46\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Jakub\Documents\projects\go\pizzeria\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -74,7 +60,7 @@
       <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg\api" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="pizzeria" />
       <working_directory value="$PROJECT_DIR$" />
@@ -113,6 +99,20 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="npm.start" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
@@ -128,7 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1634656017731</updated>
       <workItem from="1634656020376" duration="3521000" />
-      <workItem from="1634745840032" duration="8524000" />
+      <workItem from="1634745840032" duration="8921000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634672431480</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="backend: add login support for github and google">
+      <created>1634754646772</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634754646772</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
