@@ -2,3 +2,15 @@
 
 ## Run
 `go run cmd/main.go`
+
+## Routes
+
+* `/menu`
+
+  * GET `/` - get all menu items
+  
+* `/auth`
+  * GET `/providers` - get a list of available providers 
+  * GET `/login?provider={provider}` - redirects to provider login page
+  * GET `/logout`
+  * GET `/me` - get current user

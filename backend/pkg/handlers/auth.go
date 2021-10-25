@@ -40,13 +40,13 @@ func NewAuthHandler(r *echo.Group, cfg *config.Config, users *repository.UsersRe
 	gothic.Store = store
 
 	goth.UseProviders(
-		github.New(cfg.GithubClient, cfg.GithubSecret, cfg.ApiUrl+"/auth/github/callback", "user"),
-		google.New(cfg.GoogleClient, cfg.GoogleSecret, cfg.ApiUrl+"/auth/google/callback"))
+		github.New(cfg.GithubClient, cfg.GithubSecret, cfg.ApiUrl+"/auth/callback/github", "user"),
+		google.New(cfg.GoogleClient, cfg.GoogleSecret, cfg.ApiUrl+"/auth/callback/google"))
 
 	r.GET("/providers", h.getProviders)
 	r.GET("/login", h.login)
-	r.GET("/:provider/callback", h.callback)
-	r.GET("/:provider/logout", h.logout)
+	r.GET("/callback/:provider", h.callback)
+	r.GET("/logout", h.logout)
 	r.GET("/me", h.getCurrentUser, middleware.CheckAuth)
 
 	return h
