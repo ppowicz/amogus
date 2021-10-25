@@ -15,6 +15,9 @@ function AuthButtons() {
   const switchLogin = () => setLoginModal(!loginModal);
   const switchRegister = () => setRegisterModal(!registerModal);
 
+  const doLogin = () => switchLogin(); // TODO
+  const doRegister = () => switchRegister(); // TODO
+
   return (
     <>
       <div className="auth-modals">
@@ -40,7 +43,7 @@ function AuthButtons() {
               variant="standard"
             />
             <DialogActions>
-              <Button onClick={switchLogin}>Login</Button>
+              <Button onClick={doLogin}>Login</Button>
             </DialogActions>
           </DialogContent>
         </Dialog>
@@ -74,17 +77,17 @@ function AuthButtons() {
               variant="standard"
             />
             <DialogActions>
-              <Button onClick={switchRegister}>Register</Button>
+              <Button onClick={doRegister}>Register</Button>
             </DialogActions>
           </DialogContent>
         </Dialog>
       </div>
       <div className="auth-buttons">
         <ButtonGroup>
-          <Button variant="outlined" onClick={switchLogin}>
+          <Button variant="text" color="inherit" onClick={switchLogin}>
             Login
           </Button>
-          <Button variant="outlined" onClick={switchRegister}>
+          <Button variant="text" color="inherit" onClick={switchRegister}>
             Register
           </Button>
         </ButtonGroup>
