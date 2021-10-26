@@ -11,6 +11,7 @@ import (
 
 func New(db *db.DB, cfg *config.Config) (*echo.Echo, error) {
 	e := echo.New()
+	e.Use(middleware.CORS())
 
 	e.Pre(middleware.RemoveTrailingSlash())
 
