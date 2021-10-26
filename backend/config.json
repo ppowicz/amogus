@@ -5,5 +5,9 @@
   "github_client": "63e8f580aeedd9d23079",
   "github_secret": "a6b11dc75474839f25e0579a94a734235d1dd306",
   "google_client": "820666605255-qufuvf8bgej5rst0oh7nn20e01835ncc.apps.googleusercontent.com",
-  "google_secret": "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"
+  "google_secret": "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",
+  "sendgrid_api_key": "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",
+  "mail_sender_email": "pizzeria@em3009.cubepotato.eu",
+  "mail_sender_name": "Pizzeria",
+  "mail_verify_template_id": "d-46cae4feacec4940b7bc1313ed9aa51d"
 }

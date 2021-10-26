@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="cart handler">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="convert json from camelCase to snake_case">
+      <change afterPath="$PROJECT_DIR$/backend/pkg/mail/mail.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/mail/sendgrid.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/utils/hash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/utils/session.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/orders.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +67,7 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/pkg" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -65,6 +78,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg\api" />
     </key>
@@ -139,7 +155,7 @@
       <workItem from="1634656020376" duration="3521000" />
       <workItem from="1634745840032" duration="10078000" />
       <workItem from="1635194523623" duration="497000" />
-      <workItem from="1635258793691" duration="4961000" />
+      <workItem from="1635258793691" duration="10439000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -190,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635263415058</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="convert json from camelCase to snake_case">
+      <created>1635264288154</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635264288154</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +239,8 @@
     <MESSAGE value="RequireRole middleware" />
     <MESSAGE value="test" />
     <MESSAGE value="cart handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart handler" />
+    <MESSAGE value="convert json from camelCase to snake_case" />
+    <option name="LAST_COMMIT_MESSAGE" value="convert json from camelCase to snake_case" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

@@ -3,8 +3,13 @@ module pizzeria
 go 1.17
 
 require (
+	github.com/badoux/checkmail v1.2.1
+	github.com/gorilla/sessions v1.2.1
 	github.com/labstack/echo/v4 v4.6.1
 	github.com/markbates/goth v1.68.0
+	github.com/matoous/go-nanoid v1.5.0
+	github.com/sendgrid/sendgrid-go v3.10.3+incompatible
+	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 	gorm.io/driver/sqlite v1.1.6
 	gorm.io/gorm v1.21.16
 )
@@ -15,16 +20,15 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
-	github.com/gorilla/sessions v1.2.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-sqlite3 v1.14.8 // indirect
+	github.com/sendgrid/rest v2.6.5+incompatible // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
-	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 // indirect
 	golang.org/x/net v0.0.0-20210913180222-943fd674d43e // indirect
 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f // indirect
 	golang.org/x/sys v0.0.0-20210910150752-751e447fb3d0 // indirect

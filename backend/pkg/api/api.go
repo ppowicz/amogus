@@ -6,14 +6,17 @@ import (
 	"pizzeria/pkg/config"
 	"pizzeria/pkg/db"
 	"pizzeria/pkg/handlers"
+	"pizzeria/pkg/mail"
 	"pizzeria/pkg/repository"
 )
 
-func New(db *db.DB, cfg *config.Config) (*echo.Echo, error) {
+func New(cfg *config.Config, db *db.DB, mail mail.Service) (*echo.Echo, error) {
 	e := echo.New()
 	e.Use(middleware.CORS())
 
 	e.Pre(middleware.RemoveTrailingSlash())
+
+	e.Debug = true
 
 	menu, err := repository.NewMenuItemsRepository(db)
 	if err != nil {
@@ -31,7 +34,7 @@ func New(db *db.DB, cfg *config.Config) (*echo.Echo, error) {
 	}
 
 	handlers.NewMenuHandler(e.Group("menu"), menu)
-	handlers.NewAuthHandler(e.Group("auth"), cfg, users)
+	handlers.NewAuthHandler(e.Group("auth"), cfg, users, mail)
 	handlers.NewCartHandler(e.Group("cart"), orders)
 
 	if err != nil {

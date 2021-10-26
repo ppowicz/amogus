@@ -10,8 +10,10 @@
   * GET `/` - get all menu items
   
 * `/auth`
+  * POST `/register` `{email, password}`
+  * POST `/login` `{email, password}`
   * GET `/providers` - get a list of available providers 
-  * GET `/login?provider={provider}` - redirects to provider login page
+  * GET `/login?provider=<provider>` - redirects to provider login page
   * GET `/logout`
   * GET `/me` - get current user
 

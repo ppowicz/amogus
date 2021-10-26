@@ -13,6 +13,11 @@ type Config struct {
 	GithubSecret string `json:"github_secret"`
 	GoogleClient string `json:"google_client"`
 	GoogleSecret string `json:"google_secret"`
+
+	MailSenderName       string `json:"mail_sender_name"`
+	MailSenderEmail      string `json:"mail_sender_email"`
+	MailVerifyTemplateID string `json:"mail_verify_template_id"`
+	SendgridApiKey       string `json:"sendgrid_api_key"`
 }
 
 func Load(path string) (cfg *Config, err error) {

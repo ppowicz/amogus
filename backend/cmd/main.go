@@ -5,6 +5,7 @@ import (
 	"pizzeria/pkg/api"
 	"pizzeria/pkg/config"
 	"pizzeria/pkg/db"
+	"pizzeria/pkg/mail"
 )
 
 func handleErr(err error) {
@@ -20,7 +21,9 @@ func main() {
 	d, err := db.New("app.db")
 	handleErr(err)
 
-	a, err := api.New(d, cfg)
+	m := mail.NewSGMailService(cfg)
+
+	a, err := api.New(cfg, d, m)
 	handleErr(err)
 
 	a.Logger.Fatal(a.Start(":8080"))
