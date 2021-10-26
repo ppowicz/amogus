@@ -14,3 +14,4 @@
   * GET `/login?provider={provider}` - redirects to provider login page
   * GET `/logout`
   * GET `/me` - get current user
+  * 
