@@ -14,18 +14,22 @@ type MenuItem struct {
 	Price       float32 `json:"price"`
 }
 
-type MenuRepo struct {
+type MenuRepo interface {
+	GetAll() ([]MenuItem, error)
+}
+
+type menuRepo struct {
 	db *db.DB
 }
 
-func NewMenuItemsRepository(db *db.DB) (*MenuRepo, error) {
+func NewMenuItemsRepository(db *db.DB) (MenuRepo, error) {
 	if err := db.AutoMigrate(&MenuItem{}); err != nil {
 		return nil, err
 	}
-	return &MenuRepo{db}, nil
+	return &menuRepo{db}, nil
 }
 
-func (m *MenuRepo) GetAll() (res []MenuItem, err error) {
+func (m *menuRepo) GetAll() (res []MenuItem, err error) {
 	err = m.db.Find(&res).Error
 	return
 }

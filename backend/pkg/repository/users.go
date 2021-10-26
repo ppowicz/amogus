@@ -27,18 +27,22 @@ type EmailConfirmation struct {
 	Email      string `json:"email"`
 }
 
-type UsersRepo struct {
+type UsersRepo interface {
+	CreateOrUpdate(user *User) (*User, error)
+}
+
+type usersRepo struct {
 	db *db.DB
 }
 
-func NewUsersRepo(db *db.DB) (*UsersRepo, error) {
+func NewUsersRepo(db *db.DB) (UsersRepo, error) {
 	if err := db.AutoMigrate(&User{}); err != nil {
 		return nil, err
 	}
-	return &UsersRepo{db: db}, nil
+	return &usersRepo{db: db}, nil
 }
 
-func (r *UsersRepo) CreateOrUpdate(user *User) (*User, error) {
+func (r *usersRepo) CreateOrUpdate(user *User) (*User, error) {
 	res := r.db.Model(user).Where("id = ?", user.ID).Updates(user)
 	if res.Error != nil {
 		return nil, res.Error

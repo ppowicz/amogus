@@ -6,10 +6,10 @@ import (
 )
 
 type MenuHandler struct {
-	repo *repository.MenuRepo
+	repo repository.MenuRepo
 }
 
-func NewMenuHandler(r *echo.Group, repo *repository.MenuRepo) *MenuHandler {
+func NewMenuHandler(r *echo.Group, repo repository.MenuRepo) *MenuHandler {
 	m := &MenuHandler{repo}
 
 	r.GET("", m.getMenuItems)

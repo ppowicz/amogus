@@ -16,17 +16,17 @@ import (
 )
 
 type AuthHandler struct {
-	users     *repository.UsersRepo
+	users     repository.UsersRepo
 	cfg       *config.Config
 	providers map[string]string
 }
 
-func NewAuthHandler(r *echo.Group, cfg *config.Config, users *repository.UsersRepo) *AuthHandler {
+func NewAuthHandler(r *echo.Group, cfg *config.Config, users repository.UsersRepo) *AuthHandler {
 	h := &AuthHandler{
 		users: users,
 		cfg:   cfg,
 		providers: map[string]string{
-			"github": "Github",
+			"github": "GitHub",
 			"google": "Google",
 		},
 	}

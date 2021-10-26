@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="RequireRole middleware">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/cart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/orders.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="yz9ajj4r" />
   </component>
@@ -40,6 +57,7 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../../src/android" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -51,7 +69,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\Jakub\Documents\projects\go\pizzeria\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -61,7 +79,7 @@
       <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg\api" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="pizzeria" />
       <working_directory value="$PROJECT_DIR$" />
@@ -131,6 +149,7 @@
       <workItem from="1634656020376" duration="3521000" />
       <workItem from="1634745840032" duration="10078000" />
       <workItem from="1635194523623" duration="497000" />
+      <workItem from="1635258793691" duration="4189000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -167,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634755522311</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <created>1635258887280</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635258887280</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +217,8 @@
     <MESSAGE value="backend: add login support for github and google" />
     <MESSAGE value="add /providers route" />
     <MESSAGE value="RequireRole middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="RequireRole middleware" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

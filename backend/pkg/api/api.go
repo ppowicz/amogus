@@ -25,8 +25,14 @@ func New(db *db.DB, cfg *config.Config) (*echo.Echo, error) {
 		return nil, err
 	}
 
+	orders, err := repository.NewOrdersRepo(db)
+	if err != nil {
+		return nil, err
+	}
+
 	handlers.NewMenuHandler(e.Group("menu"), menu)
 	handlers.NewAuthHandler(e.Group("auth"), cfg, users)
+	handlers.NewCartHandler(e.Group("cart"), orders)
 
 	if err != nil {
 		return nil, err
