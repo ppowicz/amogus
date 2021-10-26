@@ -29,7 +29,7 @@ type OrderItem struct {
 	gorm.Model `json:"-"`
 	ID         uint     `json:"id"`
 	OrderID    uint     `json:"-"`
-	ItemID     uint     `json:"itemID"`
+	ItemID     uint     `json:"item_id"`
 	Item       MenuItem `json:"item"`
 }
 

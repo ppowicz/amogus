@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/handlers/cart.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/repository/orders.go" afterDir="false" />
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="cart handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/menuitems.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/menuitems.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/orders.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +139,7 @@
       <workItem from="1634656020376" duration="3521000" />
       <workItem from="1634745840032" duration="10078000" />
       <workItem from="1635194523623" duration="497000" />
-      <workItem from="1635258793691" duration="4189000" />
+      <workItem from="1635258793691" duration="4961000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -193,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635258887280</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cart handler">
+      <created>1635263415058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635263415058</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +215,8 @@
     <MESSAGE value="add /providers route" />
     <MESSAGE value="RequireRole middleware" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="cart handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="cart handler" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
