@@ -14,8 +14,8 @@ const (
 
 type User struct {
 	gorm.Model `json:"-"`
-	ID         string   `json:"id"`
-	Email      string   `json:"email" gorm:"unique_index"`
+	ID         string   `json:"id" gorm:"autoIncrement"`
+	Email      string   `json:"email"`
 	Password   string   `json:"-"`
 	Role       UserRole `json:"role"`
 	Verified   bool     `json:"-"`

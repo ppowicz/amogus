@@ -17,6 +17,9 @@ import (
 	"pizzeria/pkg/utils"
 )
 
+const idAlphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+const verifyCodeAlphabet = idAlphabet + "-=:"
+
 type AuthHandler struct {
 	users     repository.UsersRepo
 	mail      mail.Service
@@ -163,14 +166,20 @@ func (h *AuthHandler) register(c echo.Context) error {
 		return err
 	}
 
+	id, err := gonanoid2.Generate(idAlphabet, 10)
+	if err != nil {
+		return err
+	}
+
 	u := repository.User{
+		ID:       "email_" + id,
 		Email:    body.Email,
 		Password: passwd,
 		Role:     0,
 		Verified: false,
 	}
 
-	verifyCode, err := gonanoid2.Generate("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890-=:", 10)
+	verifyCode, err := gonanoid2.Generate(verifyCodeAlphabet, 10)
 	if err != nil {
 		return err
 	}

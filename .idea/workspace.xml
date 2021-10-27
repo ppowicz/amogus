@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="convert json from camelCase to snake_case">
-      <change afterPath="$PROJECT_DIR$/backend/pkg/mail/mail.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/mail/sendgrid.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/utils/hash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pkg/utils/session.go" afterDir="false" />
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="auth by email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pkg/repository/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
     </list>
@@ -155,7 +144,8 @@
       <workItem from="1634656020376" duration="3521000" />
       <workItem from="1634745840032" duration="10078000" />
       <workItem from="1635194523623" duration="497000" />
-      <workItem from="1635258793691" duration="10439000" />
+      <workItem from="1635258793691" duration="10865000" />
+      <workItem from="1635316778188" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -213,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635264288154</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="auth by email">
+      <created>1635282331600</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635282331600</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +237,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="cart handler" />
     <MESSAGE value="convert json from camelCase to snake_case" />
-    <option name="LAST_COMMIT_MESSAGE" value="convert json from camelCase to snake_case" />
+    <MESSAGE value="auth by email" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth by email" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
