@@ -1,13 +1,16 @@
 import React from "react";
 import { render } from "react-dom";
+
+import Main from "./views/Main";
+
 import Header from "./components/Header";
-import Container from "@mui/material/Container";
+import MenuItem from "./components/MenuItem"
 
 function Application() {
   return (
     <>
       <Header />
-      <Container>::content::</Container>
+      <Main />
     </>
   );
 }

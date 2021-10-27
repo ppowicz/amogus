@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { apiPaths } from "../api";
 
+import { apiPaths,  getCurrentUser,  login, register, callProvider } from "../api";
 import IUser from "~/interfaces/IUser";
 
 import Button from "@mui/material/Button";
@@ -11,31 +11,54 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import ButtonGroup from "@mui/material/ButtonGroup";
-
+import IconButton from "@mui/material/IconButton";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
+import Typography from "@mui/material/Typography";
 
 function AuthButtons() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
   const [user, setUser] = useState<IUser>(null!);
+  const [providers, setProviders] = useState(null);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [repeatError, setRepeatError] = useState(false);
 
   const switchLogin = () => setLoginModal(!loginModal);
   const switchRegister = () => setRegisterModal(!registerModal);
 
-  const doLogin = () => switchLogin(); // TODO
-  const doRegister = () => switchRegister(); // TODO
+  const doLogin = () => {
+    login(email, password);
+  };
+  const doRegister = () => {
+    setRepeatError(false);
+    if (password == repeatPassword) {
+      register(email, password);
+    } else {
+      setRepeatError(true);
+    }
+  };
 
   const logout = () => {
     axios.get(apiPaths.logout).then(() => {
       window.location.reload();
     }).catch(error => console.warn(error));
   }
-  const getCurrentUser = () => {
-    axios.get(apiPaths.me).then(response => {
-      setUser(response.data);
-    }).catch(error => console.warn(error));
-  }
 
-  useEffect(() => getCurrentUser(), [])
+  useEffect(() => {
+    getCurrentUser().then(u => {
+      setUser(u!)
+      console.log(u)
+    });
+
+    // getProviders().then(p => {
+    //   setProviders(p);
+    //   console.log(p);
+    // })
+  }, [])
 
   return (
     <>
@@ -43,6 +66,11 @@ function AuthButtons() {
         <Dialog open={loginModal} onClose={switchLogin}>
           <DialogTitle>Login</DialogTitle>
           <DialogContent>
+            <Typography variant="body2">Login with:</Typography>
+            <ButtonGroup>
+              <IconButton onClick={() => callProvider("github")}><GitHubIcon /></IconButton>
+              <IconButton onClick={() => callProvider("google")}><GoogleIcon /></IconButton>
+            </ButtonGroup>
             <TextField
               margin="dense"
               autoFocus
@@ -51,6 +79,8 @@ function AuthButtons() {
               type="email"
               fullWidth
               variant="standard"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               margin="dense"
@@ -59,6 +89,8 @@ function AuthButtons() {
               type="password"
               fullWidth
               variant="standard"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
             <DialogActions>
               <Button onClick={doLogin}>Login</Button>
@@ -76,6 +108,8 @@ function AuthButtons() {
               type="email"
               fullWidth
               variant="standard"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               margin="dense"
@@ -84,6 +118,9 @@ function AuthButtons() {
               type="password"
               fullWidth
               variant="standard"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              error={repeatError}
             />
             <TextField
               margin="dense"
@@ -92,6 +129,9 @@ function AuthButtons() {
               type="password"
               fullWidth
               variant="standard"
+              value={repeatPassword}
+              onChange={e => setRepeatPassword(e.target.value)}
+              error={repeatError}
             />
             <DialogActions>
               <Button onClick={doRegister}>Register</Button>
