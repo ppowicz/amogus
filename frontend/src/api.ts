@@ -2,14 +2,13 @@ import axios from "axios";
 import IUser from "./interfaces/IUser";
 
 const apiPaths = {
-  menu: "http://localhost:8080/menu",
-
-  login: "http://localhost:8080/auth/login",
-  register: "http://localhost:8080/auth/register",
-  logout: "http://localhost:8080/auth/logout",
-  me: "http://localhost:8080/auth/me",
-  providers: "https://localhost/auth/providers"
-} // TODO: Change localhost to api url
+  menu: "https://pizzeria.cubepotato.eu/menu",
+  login: "https://pizzeria.cubepotato.eu/auth/login",
+  register: "https://pizzeria.cubepotato.eu/auth/register",
+  logout: "https://pizzeria.cubepotato.eu/auth/logout",
+  me: "https://pizzeria.cubepotato.eu/auth/me",
+  providers: "https://pizzeria.cubepotato.eu/auth/providers"
+}
 
 const getMenu = async () => {
   let data;

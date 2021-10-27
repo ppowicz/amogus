@@ -20,7 +20,7 @@ function AuthButtons() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
   const [user, setUser] = useState<IUser>(null!);
-  const [providers, setProviders] = useState(null);
+  // const [providers, setProviders] = useState(null);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
