@@ -4,4 +4,5 @@ export default interface IMenuItem {
   description: string;
   image_url: string;
   price: number;
+  amount: number;
 }

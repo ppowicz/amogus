@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import IMenuItem from "~/interfaces/IMenuItem";
 
@@ -11,7 +11,12 @@ import Typography from '@mui/material/Typography';
 import IconButton from "@mui/material/IconButton";
 import AddIcon from '@mui/icons-material/Add';
 
-export const MenuItem = (item: IMenuItem) => {
+type Props = {
+  item: IMenuItem;
+  handleAddToCart: (clickedItem: IMenuItem) => void;
+}
+
+const MenuItem: FC<Props> = ({ item, handleAddToCart }) => {
   return (
     <Card style={{width: "200px"}}>
       <CardMedia 
@@ -25,8 +30,10 @@ export const MenuItem = (item: IMenuItem) => {
         <Typography variant="body2" color="text.secondary">{item.description}</Typography>
       </CardContent>
       <CardActions>
-        <IconButton color="success"><AddIcon /></IconButton>
+        <IconButton color="success" onClick={() => handleAddToCart(item)}><AddIcon /></IconButton>
       </CardActions>
     </Card>
   )
 }
+
+export default MenuItem
