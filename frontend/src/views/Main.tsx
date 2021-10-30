@@ -10,7 +10,7 @@ import MenuItem from "../components/MenuItem";
 import Container from "@mui/material/Container";
 import { Badge, Drawer, IconButton } from "@mui/material";
 
-import { StyledButton } from '../Styles/Main.styles'
+import { StyledButton } from '../styles/Main.styles'
 
 export default function Main() {
   const [menu, setMenu] = useState<IMenuItem[]>(null!);

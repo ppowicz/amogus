@@ -3,7 +3,7 @@ import IMenuItem from '~/interfaces/IMenuItem'
 
 import Container from '@mui/material/Container'
 import CartItem from './CartItem'
-import { Wrapper } from '../../Styles/Cart.styles'
+import { Wrapper } from '../../styles/Cart.styles'
 
 type Props = {
     cartItems: IMenuItem[];

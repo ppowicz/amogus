@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Button, Container } from '@mui/material';
 
 import IMenuItem from '~/interfaces/IMenuItem'
-import { Wrapper } from '../../Styles/CartItem.styles'
+import { Wrapper } from '../../styles/CartItem.styles'
 
 type Props = {
     item: IMenuItem;
