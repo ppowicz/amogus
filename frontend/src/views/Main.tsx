@@ -49,9 +49,6 @@ export default function Main() {
     );
   };
 
-  const calculateTotal = (items: IMenuItem[]) =>
-    items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
-
   useEffect(() => {
     getMenu().then(data => setMenu(data!)).catch(error => console.warn(error))
   }, [])
