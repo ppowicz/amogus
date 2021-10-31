@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import IconButton from "@mui/material/IconButton";
-import AddIcon from '@mui/icons-material/Add';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 type Props = {
   item: IMenuItem;
@@ -30,7 +30,7 @@ const MenuItem: FC<Props> = ({ item, handleAddToCart }) => {
         <Typography variant="body2" color="text.secondary">{item.description}</Typography>
       </CardContent>
       <CardActions>
-        <IconButton color="success" onClick={() => handleAddToCart(item)}><AddIcon /></IconButton>
+        <IconButton color="success" onClick={() => handleAddToCart(item)}><AddShoppingCartIcon /></IconButton>
       </CardActions>
     </Card>
   )

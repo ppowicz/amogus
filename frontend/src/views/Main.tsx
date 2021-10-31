@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getMenu } from "../api"
 import { useQuery } from 'react-query';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from "../components/Cart/Cart";
 
 import IMenuItem from "~/interfaces/IMenuItem";
@@ -10,7 +10,8 @@ import MenuItem from "../components/MenuItem";
 import Container from "@mui/material/Container";
 import { Badge, Drawer, IconButton } from "@mui/material";
 
-import { StyledButton } from '../styles/Main.styles'
+import { StyledButton, CheckoutButton } from '../styles/Main.styles'
+import Grid from "@mui/material/Grid";
 
 export default function Main() {
   const [menu, setMenu] = useState<IMenuItem[]>(null!);
@@ -48,22 +49,29 @@ export default function Main() {
     );
   };
 
+  const calculateTotal = (items: IMenuItem[]) =>
+    items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
+
   useEffect(() => {
     getMenu().then(data => setMenu(data!)).catch(error => console.warn(error))
   }, [])
 
   return (
     <Container style={{marginTop: "2em"}}>
-      {menu != null ? 
-        menu.map(item => {
-          return <MenuItem item={item} key={item.id} handleAddToCart={handleAddToCart} />
-        })
-      :
-        <></>
-      }
+      <Grid container spacing={3}>
+        {menu != null ? 
+          menu.map(item => {
+            return <Grid item xs>
+              <MenuItem item={item} key={item.id} handleAddToCart={handleAddToCart} />
+            </Grid>
+          })
+        :
+          <></>
+        }
+      </Grid>
       <StyledButton color="primary" onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)}>
-          <AddShoppingCartIcon />
+          <ShoppingCartIcon />
         </Badge>
       </StyledButton>
       <Container>
@@ -77,6 +85,7 @@ export default function Main() {
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
           />
+          <CheckoutButton variant="contained">Checkout</CheckoutButton>
         </Drawer>
       </Container>
     </Container>
