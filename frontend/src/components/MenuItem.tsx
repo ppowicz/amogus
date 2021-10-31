@@ -31,6 +31,7 @@ const MenuItem: FC<Props> = ({ item, handleAddToCart }) => {
       </CardContent>
       <CardActions>
         <IconButton color="success" onClick={() => handleAddToCart(item)}><AddShoppingCartIcon /></IconButton>
+        <Typography variant="h6">${item.price}</Typography>
       </CardActions>
     </Card>
   )

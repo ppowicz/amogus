@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getMenu } from "../api"
-import { useQuery } from 'react-query';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from "../components/Cart/Cart";
 
