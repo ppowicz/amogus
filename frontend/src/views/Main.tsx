@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getMenu } from "../api"
+import { apiPaths, invoke, useApi } from "../api";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from "../components/Cart/Cart";
 
@@ -13,9 +13,10 @@ import { StyledButton, CheckoutButton } from '../styles/Main.styles'
 import Grid from "@mui/material/Grid";
 
 export default function Main() {
-  const [menu, setMenu] = useState<IMenuItem[]>(null!);
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as IMenuItem[]);
+
+  const menu = useApi(apiPaths.menu);
 
   const getTotalItems = (items: IMenuItem[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -48,17 +49,13 @@ export default function Main() {
     );
   };
 
-  useEffect(() => {
-    getMenu().then(data => setMenu(data!)).catch(error => console.warn(error))
-  }, [])
-
   return (
     <Container style={{marginTop: "2em"}}>
       <Grid container spacing={3}>
-        {menu != null ? 
-          menu.map(item => {
-            return <Grid item xs>
-              <MenuItem item={item} key={item.id} handleAddToCart={handleAddToCart} />
+        {menu.isSuccess  ?
+          menu.data.map(item => {
+            return <Grid item xs key={item.id}>
+              <MenuItem item={item} handleAddToCart={handleAddToCart} />
             </Grid>
           })
         :

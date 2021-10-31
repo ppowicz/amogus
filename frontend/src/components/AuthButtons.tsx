@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-import { apiPaths,  getCurrentUser,  login, register, callProvider } from "../api";
-import IUser from "~/interfaces/IUser";
+import { apiPaths, callProvider, invoke, queryClient, useApi } from "../api";
 
 import Button from "@mui/material/Button";
+import LoadingButton from '@mui/lab/LoadingButton'
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -15,12 +15,14 @@ import IconButton from "@mui/material/IconButton";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import Typography from "@mui/material/Typography";
+import { useMutation, useQuery } from 'react-query';
 
 function AuthButtons() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
-  const [user, setUser] = useState<IUser>(null!);
   // const [providers, setProviders] = useState(null);
+
+  const { data: user, isLoading } = useQuery(apiPaths.me.url, () => invoke(apiPaths.me).catch(() => null));
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,35 +32,33 @@ function AuthButtons() {
   const switchLogin = () => setLoginModal(!loginModal);
   const switchRegister = () => setRegisterModal(!registerModal);
 
-  const doLogin = () => {
-    login(email, password);
-  };
-  const doRegister = () => {
+  const login = useMutation(apiPaths.loginByEmail.url, () => invoke(apiPaths.loginByEmail, {email, password}), {
+    onSuccess: () => {
+      queryClient.invalidateQueries(apiPaths.me.url);
+      setLoginModal(false);
+    }
+  });
+
+  const register = useMutation(apiPaths.loginByEmail.url, async () => {
     setRepeatError(false);
     if (password == repeatPassword) {
-      register(email, password);
+      invoke(apiPaths.registerByEmail, {email, password});
     } else {
       setRepeatError(true);
+      throw '';
     }
-  };
+  }, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(apiPaths.me.url);
+      setLoginModal(false);
+    }
+  });
 
-  const logout = () => {
-    axios.get(apiPaths.logout).then(() => {
-      window.location.reload();
-    }).catch(error => console.warn(error));
-  }
-
-  useEffect(() => {
-    getCurrentUser().then(u => {
-      setUser(u!)
-      console.log(u)
-    });
-
-    // getProviders().then(p => {
-    //   setProviders(p);
-    //   console.log(p);
-    // })
-  }, [])
+  const logout = useMutation(apiPaths.logout, () => invoke(apiPaths.logout), {
+    onSettled: () => {
+      queryClient.invalidateQueries(apiPaths.me.url);
+    }
+  });
 
   return (
     <>
@@ -93,7 +93,7 @@ function AuthButtons() {
               onChange={e => setPassword(e.target.value)}
             />
             <DialogActions>
-              <Button onClick={doLogin}>Login</Button>
+              <LoadingButton onClick={() => login.mutate()} loading={login.isLoading}>Login</LoadingButton>
             </DialogActions>
           </DialogContent>
         </Dialog>
@@ -134,7 +134,7 @@ function AuthButtons() {
               error={repeatError}
             />
             <DialogActions>
-              <Button onClick={doRegister}>Register</Button>
+              <LoadingButton onClick={() => register.mutate()} loading={register.isLoading}>Register</LoadingButton>
             </DialogActions>
           </DialogContent>
         </Dialog>
@@ -152,11 +152,11 @@ function AuthButtons() {
         :
           <ButtonGroup>
             <Button variant="text" color="inherit">
-              {user.Email}
+              {user.email}
             </Button>
-            <Button variant="text" color="inherit" onClick={logout}>
+            <LoadingButton variant="text" color="inherit" onClick={() => logout.mutate()} loading={logout.isLoading}>
               Logout
-            </Button>
+            </LoadingButton>
           </ButtonGroup>
       }
       </div>

@@ -101,7 +101,7 @@ func (h *AuthHandler) logout(c echo.Context) error {
 		return err
 	}
 
-	return c.Redirect(http.StatusTemporaryRedirect, h.cfg.FrontUrl)
+	return c.NoContent(200)
 }
 
 func (h *AuthHandler) login(c echo.Context) error {

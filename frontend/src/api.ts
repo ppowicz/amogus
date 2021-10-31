@@ -1,72 +1,74 @@
-import axios from "axios";
-import IUser from "./interfaces/IUser";
+import IMenuItem from './interfaces/IMenuItem';
+import IUser from './interfaces/IUser';
+import { QueryClient, useMutation, UseMutationResult, useQuery, UseQueryResult } from 'react-query';
 
-const apiPaths = {
-  menu: "https://pizzeria.cubepotato.eu/menu",
-  login: "https://pizzeria.cubepotato.eu/auth/login",
-  register: "https://pizzeria.cubepotato.eu/auth/register",
-  logout: "https://pizzeria.cubepotato.eu/auth/logout",
-  me: "https://pizzeria.cubepotato.eu/auth/me",
-  providers: "https://pizzeria.cubepotato.eu/auth/providers",
+export const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            retry: 0
+        }
+    }
+});
+
+const apiUrl = window.location.hostname.includes('localhost') ? 'http://localhost:8080' : 'https://pizzeria.cubepotato.eu';
+
+type LoginRegisterData = { email: string; password: string };
+
+type Route<TRes = any, TData = never> = {
+    method: 'get' | 'post' | 'delete' | 'put';
+    url: string;
 };
 
-const getMenu = async () => {
-  let data;
-  await axios
-    .get(apiPaths.menu)
-    .then((response) => {
-      data = response.data;
-    })
-    .catch((error) => console.warn(error));
-  return data;
+function newRoute<TRes = any, TData = any>(url: string, method: Route['method'] = 'get'): Route<TRes, TData> {
+    return { method, url };
+}
+
+export const apiPaths = {
+    menu: newRoute<IMenuItem[]>('/menu'),
+    loginByEmail:  newRoute<any, LoginRegisterData>('/auth/login', 'post'),
+    registerByEmail:  newRoute<any, LoginRegisterData>('/auth/register', 'post'),
+    logout: "/auth/logout",
+    me: newRoute<IUser>('/auth/me'),
+    providers: "/auth/providers",
 };
 
-const login = (email: string, password: string) => {
-  axios
-    .post(apiPaths.login, { email, password })
-    .then(() => window.location.reload)
-    .catch((error) => console.warn(error));
-};
+function generateQuery(obj: Record<string, any>) {
+    let params = new URLSearchParams();
+    for(let key in obj)
+        params.append(key, obj[key]);
+    return params;
+}
 
-const register = (email: string, password: string) => {
-  axios
-    .post(apiPaths.register, { email, password })
-    .then(() => window.location.reload)
-    .catch((error) => console.warn(error));
-};
+export async function invoke<TRes, TData>(_route: Route<TRes, TData> | string, data?: TData): Promise<TRes> {
+    let route: Route;
+    if (typeof _route === 'string') {
+        route = {method: 'get', url: _route as string};
+    } else route = _route as Route;
 
-const logout = () => {
-  axios
-    .get(apiPaths.logout)
-    .then(() => window.location.reload)
-    .catch((error) => console.warn(error));
-};
+    const query = (route.method === 'get' && data) ? generateQuery(data) : '';
 
-const getCurrentUser = () => {
-  return new Promise<IUser>((resolve) => {
-    axios
-      .get(apiPaths.me)
-      .then((response) => resolve(response.data))
-      .catch((error) => console.warn(error));
-  });
-};
+    const req = await fetch(apiUrl + route.url + query, {
+        method: route.method,
+        body: ['post', 'put'].includes(route.method) ? JSON.stringify(data) : undefined,
+        headers: {
+            'Content-Type': ['post', 'put'].includes(route.method) ? 'application/json' : undefined,
+        } as any,
+        credentials: "include"
+    });
 
-// const getProviders = () => {
-//   return new Promise(resolve => {
-//     axios.get(apiPaths.providers).then(response => resolve(response.data)).catch(error => console.warn(error));
-//   })
-// }
+    if(req.status !== 200) {
+        throw new Error((await req.json())?.message || req.status.toString());
+    }
 
-const callProvider = (provider: string) => {
-  document.location.href = apiPaths.login + "?provider=" + provider;
-};
+    if(req.headers.get('Content-Type')?.includes('application/json'))
+        return await req.json();
+    return (await req.text()) as any;
+}
 
-export {
-  apiPaths,
-  getMenu,
-  login,
-  register,
-  logout,
-  getCurrentUser,
-  callProvider,
+export function useApi<TRes, TData>(route: Route<TRes, TData>, getData?: () => TData): UseQueryResult<TRes> {
+    return useQuery(route.url, () => invoke(route, getData ? getData() : undefined));
+}
+
+export const callProvider = (provider: string) => {
+    document.location.href = apiUrl + "?provider=" + provider;
 };

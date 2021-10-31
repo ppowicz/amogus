@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="auth by email">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="api refactoring - switch to react-query">
+      <change beforePath="$PROJECT_DIR$/.idea/pizzeria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pizzeria.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/repository/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/repository/users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/interfaces/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/interfaces/IUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -145,7 +153,8 @@
       <workItem from="1634745840032" duration="10078000" />
       <workItem from="1635194523623" duration="497000" />
       <workItem from="1635258793691" duration="10865000" />
-      <workItem from="1635316778188" duration="227000" />
+      <workItem from="1635316778188" duration="1555000" />
+      <workItem from="1635690410670" duration="3655000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -210,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635282331600</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="register by email: generate proper user id">
+      <created>1635317071673</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635317071673</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +254,9 @@
     <MESSAGE value="cart handler" />
     <MESSAGE value="convert json from camelCase to snake_case" />
     <MESSAGE value="auth by email" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth by email" />
+    <MESSAGE value="register by email: generate proper user id" />
+    <MESSAGE value="api refactoring - switch to react-query" />
+    <option name="LAST_COMMIT_MESSAGE" value="api refactoring - switch to react-query" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

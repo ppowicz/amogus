@@ -12,7 +12,9 @@ import (
 
 func New(cfg *config.Config, db *db.DB, mail mail.Service) (*echo.Echo, error) {
 	e := echo.New()
-	e.Use(middleware.CORS())
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowCredentials: true,
+	}))
 
 	e.Pre(middleware.RemoveTrailingSlash())
 
