@@ -5,17 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="api refactoring - switch to react-query">
-      <change beforePath="$PROJECT_DIR$/.idea/pizzeria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pizzeria.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Admin/EditItemPopup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Admin/MenuManagement.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/GlobalSnackbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/PrivateRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/utils/GlobalHook.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/Admin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pkg/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/api/api.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/handlers/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pkg/middleware/checkauth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MenuItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/interfaces/IMenuItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/interfaces/IMenuItem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/interfaces/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/interfaces/IUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,10 +82,11 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/pkg" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Jakub\Documents\projects\go\pizzeria\frontend\node_modules\prettier" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\Jakub\Documents\projects\go\pizzeria\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -82,7 +99,7 @@
       <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg\api" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="pizzeria" />
       <working_directory value="$PROJECT_DIR$" />
@@ -155,6 +172,8 @@
       <workItem from="1635258793691" duration="10865000" />
       <workItem from="1635316778188" duration="1555000" />
       <workItem from="1635690410670" duration="3655000" />
+      <workItem from="1635763201833" duration="7210000" />
+      <workItem from="1635770684482" duration="1629000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>

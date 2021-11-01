@@ -58,12 +58,16 @@ func NewAuthHandler(r *echo.Group, cfg *config.Config, users repository.UsersRep
 	r.GET("/login", h.login)
 	r.GET("/callback/:provider", h.callback)
 	r.GET("/logout", h.logout)
-	r.GET("/me", h.getCurrentUser, middleware.CheckAuth)
+	r.GET("/me", h.getCurrentUser)
 
 	return h
 }
 
 func (h *AuthHandler) getCurrentUser(c echo.Context) error {
+	if err := middleware.LoadUserToContext(c); err != nil {
+		return c.JSON(200, nil)
+	}
+
 	u, _ := middleware.GetUserFromContext(c)
 	return c.JSON(200, u)
 }

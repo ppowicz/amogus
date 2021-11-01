@@ -22,7 +22,7 @@ function AuthButtons() {
   const [registerModal, setRegisterModal] = useState(false);
   // const [providers, setProviders] = useState(null);
 
-  const { data: user, isLoading } = useQuery(apiPaths.me.url, () => invoke(apiPaths.me).catch(() => null));
+  const { data: user } = useApi(apiPaths.me);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,14 +32,14 @@ function AuthButtons() {
   const switchLogin = () => setLoginModal(!loginModal);
   const switchRegister = () => setRegisterModal(!registerModal);
 
-  const login = useMutation(apiPaths.loginByEmail.url, () => invoke(apiPaths.loginByEmail, {email, password}), {
+  const login = useMutation(apiPaths.loginByEmail.path, () => invoke(apiPaths.loginByEmail, {email, password}), {
     onSuccess: () => {
-      queryClient.invalidateQueries(apiPaths.me.url);
+      queryClient.invalidateQueries(apiPaths.me.path);
       setLoginModal(false);
     }
   });
 
-  const register = useMutation(apiPaths.loginByEmail.url, async () => {
+  const register = useMutation(apiPaths.loginByEmail.path, async () => {
     setRepeatError(false);
     if (password == repeatPassword) {
       invoke(apiPaths.registerByEmail, {email, password});
@@ -49,14 +49,14 @@ function AuthButtons() {
     }
   }, {
     onSuccess: () => {
-      queryClient.invalidateQueries(apiPaths.me.url);
+      queryClient.invalidateQueries(apiPaths.me.path);
       setLoginModal(false);
     }
   });
 
   const logout = useMutation(apiPaths.logout, () => invoke(apiPaths.logout), {
     onSettled: () => {
-      queryClient.invalidateQueries(apiPaths.me.url);
+      queryClient.invalidateQueries(apiPaths.me.path);
     }
   });
 

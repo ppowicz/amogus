@@ -11,8 +11,9 @@ import { Badge, Drawer, IconButton } from "@mui/material";
 
 import { StyledButton, CheckoutButton } from '../styles/Main.styles'
 import Grid from "@mui/material/Grid";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-export default function Main() {
+export default function Menu() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as IMenuItem[]);
 
@@ -50,12 +51,14 @@ export default function Main() {
   };
 
   return (
-    <Container style={{marginTop: "2em"}}>
+    <>
       <Grid container spacing={3}>
         {menu.isSuccess  ?
           menu.data.map(item => {
             return <Grid item xs key={item.id}>
-              <MenuItem item={item} handleAddToCart={handleAddToCart} />
+              <MenuItem item={item}>
+	              <IconButton color="success" onClick={() => handleAddToCart(item)}><AddShoppingCartIcon/></IconButton>
+              </MenuItem>
             </Grid>
           })
         :
@@ -81,6 +84,6 @@ export default function Main() {
           <CheckoutButton variant="contained">Checkout</CheckoutButton>
         </Drawer>
       </Container>
-    </Container>
+    </>
   )
 }

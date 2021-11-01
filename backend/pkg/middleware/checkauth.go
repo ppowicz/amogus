@@ -9,20 +9,26 @@ import (
 	"pizzeria/pkg/repository"
 )
 
+func LoadUserToContext(c echo.Context) error {
+	userStr, err := gothic.GetFromSession("user", c.Request())
+	if err != nil || userStr == "" || userStr == "null" {
+		return echo.NewHTTPError(http.StatusUnauthorized)
+	}
+
+	u := new(repository.User)
+	if err := json.Unmarshal([]byte(userStr), u); err != nil {
+		return err
+	}
+
+	c.Set("user", u)
+	return nil
+}
+
 func CheckAuth(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		userStr, err := gothic.GetFromSession("user", c.Request())
-		if err != nil || userStr == "" || userStr == "null" {
-			return echo.NewHTTPError(http.StatusUnauthorized)
-		}
-
-		u := new(repository.User)
-		if err := json.Unmarshal([]byte(userStr), u); err != nil {
+		if err := LoadUserToContext(c); err != nil {
 			return err
 		}
-
-		c.Set("user", u)
-
 		return next(c)
 	}
 }
