@@ -29,8 +29,20 @@ function AuthButtons() {
   const [repeatPassword, setRepeatPassword] = useState("");
   const [repeatError, setRepeatError] = useState(false);
 
-  const switchLogin = () => setLoginModal(!loginModal);
-  const switchRegister = () => setRegisterModal(!registerModal);
+  const clearForms = () => {
+    setEmail("");   
+    setPassword("");
+    setRepeatPassword("");
+  }
+
+  const switchLogin = () => {
+    setLoginModal(!loginModal);
+    clearForms();
+  };
+  const switchRegister = () => {
+    setRegisterModal(!registerModal)
+    clearForms();
+  };
 
   const login = useMutation(apiPaths.loginByEmail.path, () => invoke(apiPaths.loginByEmail, {email, password}), {
     onSuccess: () => {
@@ -60,6 +72,15 @@ function AuthButtons() {
     }
   });
 
+  const ProvidersButtons = () => {
+    return (
+      <ButtonGroup>
+        <IconButton onClick={() => callProvider("github")}><GitHubIcon /></IconButton>
+        <IconButton onClick={() => callProvider("google")}><GoogleIcon /></IconButton>
+      </ButtonGroup>
+    )
+  }
+
   return (
     <>
       <div className="auth-modals">
@@ -67,10 +88,7 @@ function AuthButtons() {
           <DialogTitle>Login</DialogTitle>
           <DialogContent>
             <Typography variant="body2">Login with:</Typography>
-            <ButtonGroup>
-              <IconButton onClick={() => callProvider("github")}><GitHubIcon /></IconButton>
-              <IconButton onClick={() => callProvider("google")}><GoogleIcon /></IconButton>
-            </ButtonGroup>
+            <ProvidersButtons />
             <TextField
               margin="dense"
               autoFocus
@@ -100,6 +118,8 @@ function AuthButtons() {
         <Dialog open={registerModal} onClose={switchRegister}>
           <DialogTitle>Register</DialogTitle>
           <DialogContent>
+            <Typography variant="body2">Register with:</Typography>
+            <ProvidersButtons />
             <TextField
               margin="dense"
               autoFocus
