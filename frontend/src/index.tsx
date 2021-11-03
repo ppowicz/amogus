@@ -12,7 +12,7 @@ import { Container, ThemeProvider } from '@mui/material';
 import { theme } from './theme';
 import { SnackbarProvider } from 'notistack';
 import { GlobalSnackbar } from './components/GlobalSnackbar';
-import PrivateRoute, { PrivateElement } from './components/PrivateRoute';
+import { PrivateElement } from './components/PrivateRoute';
 import NotFound from './views/NotFound';
 
 function Application() {
