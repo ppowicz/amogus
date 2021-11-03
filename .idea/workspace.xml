@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="fix warnings">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="fix warnings v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +37,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="yz9ajj4r" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="1zjKN3qGGZ9I00F92NYZstU4axU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -61,6 +65,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\Jakub\Documents\projects\go\pizzeria\frontend\node_modules\typescript\lib" />
@@ -74,7 +79,7 @@
       <recent name="C:\Users\Jakub\Documents\projects\go\pizzeria\backend\pkg\api" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="pizzeria" />
       <working_directory value="$PROJECT_DIR$" />
@@ -149,7 +154,7 @@
       <workItem from="1635690410670" duration="3655000" />
       <workItem from="1635763201833" duration="7210000" />
       <workItem from="1635770684482" duration="2271000" />
-      <workItem from="1635952636868" duration="176000" />
+      <workItem from="1635952636868" duration="3678000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -235,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635952780871</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix warnings v2">
+      <created>1635952821324</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952821324</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +279,8 @@
     <MESSAGE value="api refactoring - switch to react-query" />
     <MESSAGE value="admin panel: menu management" />
     <MESSAGE value="fix warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix warnings" />
+    <MESSAGE value="fix warnings v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix warnings v2" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

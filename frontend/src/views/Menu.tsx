@@ -3,7 +3,6 @@ import { apiPaths, useApi } from "../api";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from "../components/Cart/Cart";
 
-import IMenuItem from "~/interfaces/IMenuItem";
 
 import MenuItem from "../components/MenuItem";
 import Container from "@mui/material/Container";
@@ -12,6 +11,7 @@ import { Badge, Drawer, IconButton } from "@mui/material";
 import { StyledButton, CheckoutButton } from '../styles/Main.styles'
 import Grid from "@mui/material/Grid";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import IMenuItem from '../interfaces/IMenuItem';
 
 export default function Menu() {
   const [cartOpen, setCartOpen] = useState(false);
