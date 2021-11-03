@@ -91,5 +91,5 @@ export function useApi<TRes, TData>(route: Route<TRes, TData>, getData?: () => T
 }
 
 export const callProvider = (provider: string) => {
-    document.location.href = apiUrl + "?provider=" + provider;
+    document.location.href = apiUrl + "/auth/login?provider=" + provider;
 };

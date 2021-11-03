@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="fix warnings v2">
+    <list default="true" id="67d614a2-056b-4303-a365-d61f697114bb" name="Changes" comment="authbuttons as dropdown">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +155,7 @@
       <workItem from="1635690410670" duration="3655000" />
       <workItem from="1635763201833" duration="7210000" />
       <workItem from="1635770684482" duration="2271000" />
-      <workItem from="1635952636868" duration="3678000" />
+      <workItem from="1635952636868" duration="3982000" />
     </task>
     <task id="LOCAL-00001" summary="menu items controller">
       <created>1634657992062</created>
@@ -247,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635952821324</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="authbuttons as dropdown">
+      <created>1635958224258</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635958224259</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +288,8 @@
     <MESSAGE value="admin panel: menu management" />
     <MESSAGE value="fix warnings" />
     <MESSAGE value="fix warnings v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix warnings v2" />
+    <MESSAGE value="authbuttons as dropdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="authbuttons as dropdown" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

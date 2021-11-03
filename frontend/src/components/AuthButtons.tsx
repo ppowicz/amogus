@@ -50,10 +50,12 @@ function AuthButtons() {
 
     const switchLogin = () => {
         setLoginModal(!loginModal);
+        closeMenu();
         clearForms();
     };
     const switchRegister = () => {
         setRegisterModal(!registerModal)
+        closeMenu();
         clearForms();
     };
 
