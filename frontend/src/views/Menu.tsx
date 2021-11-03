@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { apiPaths, invoke, useApi } from "../api";
+import React, { useState } from "react";
+import { apiPaths, useApi } from "../api";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from "../components/Cart/Cart";
 
@@ -20,7 +20,7 @@ export default function Menu() {
   const menu = useApi(apiPaths.menu);
 
   const getTotalItems = (items: IMenuItem[]) =>
-    items.reduce((ack: number, item) => ack + item.amount, 0);
+    items.reduce((ack: number, item) => ack + item.amount!, 0);
 
   const handleAddToCart = (clickedItem: IMenuItem) => {
     setCartItems(prev => {
@@ -29,7 +29,7 @@ export default function Menu() {
       if (isItemInCart) {
         return prev.map(item =>
           item.id === clickedItem.id
-            ? { ...item, amount: item.amount + 1 }
+            ? { ...item, amount: item.amount! + 1 }
             : item
         );
       }
@@ -42,7 +42,7 @@ export default function Menu() {
       prev.reduce((ack, item) => {
         if (item.id === id) {
           if (item.amount === 1) return ack;
-          return [...ack, { ...item, amount: item.amount - 1 }];
+          return [...ack, { ...item, amount: item.amount! - 1 }];
         } else {
           return [...ack, item];
         }
