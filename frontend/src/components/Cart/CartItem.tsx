@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 
 import IMenuItem from '~/interfaces/IMenuItem'
 import { Wrapper } from '../../styles/CartItem.styles'
@@ -17,14 +17,14 @@ const CartItem: FC<Props> = ({ item, addToCart, removeFromCart }) => {
         <h3>{item.name}</h3>
         <div className='information'>
           <p>Price: ${item.price}</p>
-          <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+          <p>Total: ${(item.amount! * item.price).toFixed(2)}</p>
         </div>
         <div className='buttons'>
           <Button
             size='small'
             disableElevation
             variant='contained'
-            onClick={() => removeFromCart(item.id)}
+            onClick={() => removeFromCart(item.id!)}
           >
             -
           </Button>
